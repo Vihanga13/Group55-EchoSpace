@@ -14,5 +14,5 @@ User-friendly interface for both professionals and homeowners
 Demo Access
 You can access a demo version of EcoSpace with the following credentials:
 
-Email: kalu@
+Email: kalu@gmail.com
 Password: Kalu@1234 
