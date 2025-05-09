@@ -13,7 +13,7 @@ const FurniturePalette: React.FC = () => {
       width: 45,
       depth: 50,
       height: 90,
-      color: '#8B4513',
+      color: '#289df4',
       icon: <ChairIcon className="h-6 w-6" />,
     },
     {
@@ -22,7 +22,7 @@ const FurniturePalette: React.FC = () => {
       width: 150,
       depth: 90,
       height: 75,
-      color: '#5D4037',
+      color: '#71d175',
       icon: <TableIcon className="h-6 w-6" />,
     },
     {
@@ -31,7 +31,7 @@ const FurniturePalette: React.FC = () => {
       width: 220,
       depth: 90,
       height: 85,
-      color: '#607D8B',
+      color: '#289df4',
       icon: <SofaIcon className="h-6 w-6" />,
     },
     {
@@ -40,7 +40,7 @@ const FurniturePalette: React.FC = () => {
       width: 120,
       depth: 45,
       height: 180,
-      color: '#795548',
+      color: '#71d175',
       icon: <SquareIcon className="h-6 w-6" />,
     },
   ];
@@ -66,19 +66,19 @@ const FurniturePalette: React.FC = () => {
   };
 
   return (
-    <div className="bg-white shadow rounded-lg overflow-hidden">
-      <div className="p-4 bg-gray-50 border-b">
-        <h3 className="text-sm font-medium text-gray-900">Furniture Palette</h3>
-      </div>
-      <div className="p-4 grid grid-cols-2 gap-3">
+    <div className="space-y-4">
+      <div className="grid grid-cols-2 gap-3">
         {furnitureTemplates.map((template) => (
           <button
             key={template.type}
             onClick={() => handleAddFurniture(template)}
-            className="flex flex-col items-center justify-center p-3 border rounded-lg hover:bg-gray-50 transition-colors"
+            className="group flex flex-col items-center justify-center p-4 rounded-xl border border-light/50 bg-white hover:bg-light/30 transition-all duration-200 hover:shadow-lg hover:shadow-primary/5"
           >
-            <div className="text-indigo-600 mb-2">{template.icon}</div>
-            <span className="text-xs font-medium text-gray-700">{template.name}</span>
+            <div className={`text-${template.color === '#289df4' ? 'primary' : 'secondary'} mb-2 group-hover:scale-110 transition-transform duration-200`}>
+              {template.icon}
+            </div>
+            <span className="text-sm font-medium text-text">{template.name}</span>
+            <div className="mt-2 w-4 h-4 rounded-full" style={{ backgroundColor: template.color }} />
           </button>
         ))}
       </div>
