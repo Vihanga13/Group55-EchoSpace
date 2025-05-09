@@ -226,14 +226,14 @@ const DesignCanvas3D: React.FC = () => {
   
   if (!currentRoom) {
     return (
-      <div className="flex items-center justify-center h-full bg-gray-100">
+      <div className="flex items-center justify-center h-[400px] w-[400px] bg-gray-100">
         <p className="text-gray-500">No room configured</p>
       </div>
     );
   }
   
   return (
-    <div className="h-full bg-gray-100 rounded-lg shadow-inner overflow-hidden design-canvas-container">
+    <div className="h-[400px] w-[400px] bg-gray-100 rounded-lg shadow-inner overflow-hidden design-canvas-container">
       <Canvas shadows camera={{ position: [0, 0, 500], fov: 45 }}>
         <RoomScene room={currentRoom} />
         <OrbitControls
